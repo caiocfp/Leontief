@@ -3,15 +3,10 @@ getwd()
 
 #pacotes#
 
-library(dplyr)
-library(ggplot2)
-library(caTools) #divide a amostra#
-library(lmtest)
-library(reshape2)
-library(magrittr)
-library(normtest)
-library(micEconCES)
-library(miscTools)
+pacotes <- c("dplyr","ggplot2","caTools","lmtest","reshape2",
+             "magrittr","normtest","micEconCES","miscTools")
+lapply(pacotes, library, character.only = T)
+
 
 #importar os dados###############################################################################
 
@@ -32,7 +27,7 @@ DESPESA_INDIVIDUAL <-
 
 
 
-# retirar os valores de despesa iguais à 9999999.99, porque, indica inexistencia #############
+# retirar os valores de despesa iguais Ã  9999999.99, porque, indica inexistencia #############
 
 
 DESPESA_INDIVIDUAL0 <- DESPESA_INDIVIDUAL %>%
